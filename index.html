@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aswin | Chemical Engineer & Innovator</title>
+<title>Aswin | Portfolio</title>
 
 <style>
 :root {
-    --primary: #0b1c2d;
-    --secondary: #00e5ff;
-    --accent: #1e88e5;
-    --glass: rgba(255,255,255,0.08);
+    --bg: #0b1c2d;
+    --card: rgba(255,255,255,0.08);
+    --accent: #00e5ff;
+    --text: #ffffff;
 }
 
 * {
@@ -20,88 +20,100 @@
     font-family: "Segoe UI", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background: linear-gradient(135deg, #06141f, #0b1c2d);
-    color: #ffffff;
-    overflow-x: hidden;
+    background: linear-gradient(135deg, #06141f, var(--bg));
+    color: var(--text);
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 100px 10%;
+}
+
+h2 {
+    margin-bottom: 30px;
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
 }
 
 /* ===== HERO ===== */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px;
 }
 
 .hero h1 {
     font-size: 3rem;
-    letter-spacing: 2px;
 }
 
 .hero span {
-    color: var(--secondary);
+    color: var(--accent);
 }
 
 .hero p {
     margin: 15px 0 30px;
-    font-size: 1.1rem;
     opacity: 0.9;
 }
 
 .hero button {
     padding: 12px 30px;
+    border-radius: 25px;
     border: none;
-    border-radius: 30px;
-    background: var(--secondary);
-    color: #000;
+    background: var(--accent);
     font-weight: bold;
     cursor: pointer;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     transition: 0.3s;
 }
 
-.hero button:hover {
-    transform: scale(1.05);
-}
-
-/* ===== SECTIONS ===== */
-section {
-    padding: 80px 10%;
-}
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    border-left: 4px solid var(--secondary);
-    padding-left: 15px;
-}
-
-/* ===== GLASS CARD ===== */
-.card {
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    transition: 0.4s;
-}
-
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 }
 
 /* ===== ABOUT ===== */
 .about-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 30px;
-}
-
-.about-grid p {
-    line-height: 1.8;
-    opacity: 0.9;
+    gap: 25px;
 }
 
 /* ===== SKILLS ===== */
@@ -111,66 +123,35 @@ section {
     gap: 20px;
 }
 
-.skill {
-    text-align: center;
-}
-
 .skill h3 {
-    color: var(--secondary);
+    color: var(--accent);
     margin-bottom: 10px;
-}
-
-/* ===== TIMELINE ===== */
-.timeline {
-    position: relative;
-    margin-top: 30px;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: var(--secondary);
-}
-
-.timeline-item {
-    margin-left: 60px;
-    margin-bottom: 30px;
-}
-
-.timeline-item h4 {
-    color: var(--secondary);
 }
 
 /* ===== PROJECTS ===== */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 /* ===== CONTACT ===== */
 .contact p {
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 /* ===== FOOTER ===== */
 footer {
     text-align: center;
-    padding: 25px;
-    background: #040b11;
-    opacity: 0.8;
+    padding: 20px;
+    background: #050c12;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== MOBILE ===== */
 @media(max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
     }
-
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -180,62 +161,65 @@ footer {
 
 <body>
 
+<!-- NAV -->
+<nav>
+    <div><b>Aswin</b></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
     <div>
-        <h1>Hi, I’m <span>Aswin</span></h1>
-        <p>Chemical Engineer | Sustainability | Innovation | Technology</p>
-        <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-            Explore My Work
-        </button>
+        <h1>Hello, I'm <span>Aswin</span></h1>
+        <p>Chemical Engineer | Innovation | Sustainability | Technology</p>
+        <button onclick="document.getElementById('about').scrollIntoView()">Explore</button>
     </div>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
-    <h2 class="section-title">About Me</h2>
+    <h2>About Me</h2>
     <div class="about-grid">
         <div class="card">
             <p>
-                I am a <b>B.Tech Chemical Engineering graduate (2025)</b> with strong
-                interest in sustainable processes, industrial chemistry,
+                I am a <b>B.Tech Chemical Engineering graduate (2025)</b> with a strong
+                interest in sustainable chemical processes, industrial applications,
                 and technology-driven innovation.
                 <br><br>
                 Currently working as an <b>SSK Fellow at Kerala Startup Mission</b>,
-                mentoring students, coordinating innovation programs,
-                and supporting STEM education.
+                mentoring students and coordinating STEM and innovation programs.
             </p>
         </div>
-
         <div class="card">
-            <h3 style="color: var(--secondary); margin-bottom: 10px;">Quick Info</h3>
             <p>🎓 Chemical Engineer</p>
             <p>🏢 KSUM – SSK Fellow</p>
+            <p>🌱 Sustainability</p>
             <p>⚙️ Arduino & IoT</p>
-            <p>🌱 Sustainability Focus</p>
         </div>
     </div>
 </section>
 
 <!-- SKILLS -->
-<section>
-    <h2 class="section-title">Core Skills</h2>
+<section id="skills">
+    <h2>Skills</h2>
     <div class="skills">
         <div class="card skill">
             <h3>Chemical Engineering</h3>
             <p>Mass Transfer, Thermodynamics, Process Design</p>
         </div>
-
         <div class="card skill">
             <h3>Sustainability</h3>
-            <p>Green Processes, Biomass Utilization</p>
+            <p>Green Chemistry, Biomass Utilization</p>
         </div>
-
         <div class="card skill">
             <h3>Technology</h3>
-            <p>Arduino, Sensors, Basic IoT Systems</p>
+            <p>Arduino, Sensors, Basic IoT</p>
         </div>
-
         <div class="card skill">
             <h3>Creative</h3>
             <p>Video Editing, Technical Presentations</p>
@@ -243,53 +227,30 @@ footer {
     </div>
 </section>
 
-<!-- TIMELINE -->
-<section>
-    <h2 class="section-title">Journey</h2>
-    <div class="timeline">
-        <div class="timeline-item card">
-            <h4>2025 – Chemical Engineering Graduate</h4>
-            <p>B.Tech in Chemical Engineering</p>
-        </div>
-
-        <div class="timeline-item card">
-            <h4>Final Year Project</h4>
-            <p>Sustainable Ammonium Nitrate Synthesis from Biomass-Derived Nitric Acid</p>
-        </div>
-
-        <div class="timeline-item card">
-            <h4>SSK Fellow – KSUM</h4>
-            <p>STEM education, innovation mentoring, startup ecosystem exposure</p>
-        </div>
-    </div>
-</section>
-
 <!-- PROJECTS -->
-<section>
-    <h2 class="section-title">Projects</h2>
+<section id="projects">
+    <h2>Projects</h2>
     <div class="projects">
         <div class="card">
-            <h3 style="color: var(--secondary);">Sustainable Fertilizer Process</h3>
-            <p>Developed a conceptual route for ammonium nitrate synthesis using renewable nitric acid sources.</p>
+            <h3 style="color:var(--accent)">Sustainable Ammonium Nitrate</h3>
+            <p>Final year project focusing on biomass-derived nitric acid for fertilizer production.</p>
         </div>
-
         <div class="card">
-            <h3 style="color: var(--secondary);">Arduino Automation Systems</h3>
-            <p>Built safety, automation, and sensor-based systems using Arduino and ESP modules.</p>
+            <h3 style="color:var(--accent)">Arduino Automation</h3>
+            <p>Built automation and safety systems using Arduino, ultrasonic sensors, and servo motors.</p>
         </div>
-
         <div class="card">
-            <h3 style="color: var(--secondary);">Innovation Programs</h3>
-            <p>Coordinated funding awareness sessions and student innovation events.</p>
+            <h3 style="color:var(--accent)">Innovation Programs</h3>
+            <p>Coordinated funding awareness and innovation sessions under KSUM.</p>
         </div>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="card">
-        <p>Email: aswin@example.com</p>
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card contact">
+        <p>Email: <a href="mailto:aswin@example.com" style="color:var(--accent)">aswin@example.com</a></p>
         <p>Phone: +91 XXXXX XXXXX</p>
         <p>LinkedIn: linkedin.com/in/aswin</p>
     </div>
